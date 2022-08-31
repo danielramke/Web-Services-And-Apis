@@ -39,7 +39,7 @@ public class SwaggerConfig {
             null,
             DEFAULT_CONTACT,
             "Copyright © 2012 - 2020, Udacity Inc.",
-            "https://github.com/danielramke/",
+            "https://github.com/danielramke/Web-Services-And-Apis/blob/main/LICENSE.txt",
             new ArrayList<>()
     );
 

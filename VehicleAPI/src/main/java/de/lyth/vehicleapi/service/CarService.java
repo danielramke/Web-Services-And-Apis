@@ -8,6 +8,7 @@ import de.lyth.vehicleapi.service.component.client.PriceClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,14 @@ public class CarService {
     private final PriceClient priceClient;
 
     public List<Car> list() {
-        return repository.findAll();
+        List<Car> cars = repository.findAll();
+        List<Car> results = new ArrayList<>();
+        for(Car car : cars) {
+            car.setLocation(mapsClient.getAddress(car.getLocation()));
+            car.setPrice(priceClient.getPrice(car.getId()));
+            results.add(car);
+        }
+        return results;
     }
 
     public Car findByID(Long id) {
