@@ -13,6 +13,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.web.reactive.function.client.WebClient;
 
+/**
+ * This launch a Spring Boot application for our Vehicle API.
+ * The car manufactures database will be setup by starting the application.
+ * It also starts the web client to communicate with the price and maps service at the same time.
+ */
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableEurekaClient
@@ -23,6 +28,11 @@ public class VehicleApiApplication {
         SpringApplication.run(VehicleApiApplication.class, args);
     }
 
+    /**
+     * This method initializes the car manufactures for the Vehicle API.
+     * @param repository who storage the manufactures.
+     * @return the manufactures to add the related repository.
+     */
     @Bean
     public CommandLineRunner initDatabase(ManufacturerRepository repository) {
         return arguments -> {
@@ -34,11 +44,19 @@ public class VehicleApiApplication {
         };
     }
 
+    /**
+     * @return an instance of a model mapper.
+     */
     @Bean
     public ModelMapper getMapper() {
         return new ModelMapper();
     }
 
+    /**
+     * Webclient for the maps' communication.
+     * @param endpoint where to communicate.
+     * @return created endpoint.
+     */
     @Bean(name = "maps")
     public WebClient clientMaps(@Value("${maps.endpoint}") String endpoint) {
         return WebClient.create(endpoint);

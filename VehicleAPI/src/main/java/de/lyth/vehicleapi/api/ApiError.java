@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * This record is used to model an api error object.
- * @param message - the error message.
+ * @param message - the error message (header).
  * @param errors - the errors as list.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

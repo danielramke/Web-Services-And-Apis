@@ -11,6 +11,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Objects;
 
+/**
+ * This class is used for getting random locations.
+ */
 @AllArgsConstructor
 @Component
 public class MapsClient {
@@ -20,6 +23,12 @@ public class MapsClient {
     private final WebClient client;
     private final ModelMapper mapper;
 
+    /**
+     * This method gets an address from the Maps client, given latitude and longitude.
+     * @param location an object which contains the lat and lon.
+     * @return An updated location including street, city, state and zip,
+     *  or an exception message noting the Maps service is down
+     */
     public Location getAddress(Location location) {
         try {
             Address address = client.get()

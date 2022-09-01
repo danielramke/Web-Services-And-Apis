@@ -9,6 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+/**
+ * This class storage all needed details for a car.
+ * The details a called in the car class and contains many thinks like:
+ *  - model, color or doors.
+ */
 @Setter
 @Getter
 @Embeddable

@@ -7,6 +7,11 @@ import javax.persistence.Embeddable;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
+/**
+ * This class hold all information about the location.
+ * Latitude and longitude must be provided.
+ * All other location information must be generated each time for the api.
+ */
 @Setter
 @Getter
 @Embeddable

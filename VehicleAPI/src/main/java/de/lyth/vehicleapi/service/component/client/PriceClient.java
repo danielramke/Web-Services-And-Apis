@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+/**
+ * This class is used for getting price information.
+ */
 @AllArgsConstructor
 @Component
 public class PriceClient {
@@ -15,6 +18,12 @@ public class PriceClient {
 
     private final PriceProxy proxy;
 
+    /**
+     * This method gets the price which is stored in the h2 database by the vehicle id.
+     * @param vehicleID the identifier for the price.
+     * @return the price for the requested vehicle.
+     * If the vehicle not found the price will contain an error message.
+     */
     public String getPrice(Long vehicleID) {
         try {
             Price price = proxy.getPrice(vehicleID);

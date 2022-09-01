@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+/**
+ * This class stored price information.
+ */
 @Setter
 @Getter
 @AllArgsConstructor

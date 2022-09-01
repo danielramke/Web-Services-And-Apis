@@ -3,6 +3,9 @@ package de.lyth.vehicleapi.model;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * This class is used to store address information like city, state and zipcode.
+ */
 @Setter
 @Getter
 public class Address {

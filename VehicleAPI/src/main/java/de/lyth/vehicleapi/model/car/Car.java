@@ -13,6 +13,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
+/**
+ * This class stored all the information for a car.
+ */
 @Setter
 @Getter
 @Entity

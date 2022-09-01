@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+/**
+ * This class using HATEOAS for mapping the car controller to the car class.
+ * Note that the HATEOAS was change in the new version of 2.7.3 and have many changes.
+ * TODO: look for issues by working with HATEOAS.
+ */
+
 @Component
 public class CarResourceAssembler implements RepresentationModelAssembler<Car, EntityModel<Car>> {
 
